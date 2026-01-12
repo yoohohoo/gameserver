@@ -24,11 +24,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ouyangzhongmin/gameserver/pkg/errutil"
+	"github.com/nano/gameserver/pkg/errutil"
 	"golang.org/x/text/encoding/simplifiedchinese"
 	"golang.org/x/text/transform"
+
 	//"triple/modules/security"
-	"github.com/ouyangzhongmin/gameserver/pkg/crypto"
+	"github.com/nano/gameserver/pkg/crypto"
 )
 
 // MD5String md5 digest in string

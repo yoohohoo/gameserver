@@ -2,8 +2,8 @@ package game
 
 // AOI管理器
 import (
-	"github.com/ouyangzhongmin/gameserver/pkg/aoi"
-	"github.com/ouyangzhongmin/gameserver/pkg/coord"
+	"github.com/nano/gameserver/pkg/aoi"
+	"github.com/nano/gameserver/pkg/coord"
 )
 
 type aoiMgr struct {

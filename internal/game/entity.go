@@ -2,10 +2,11 @@ package game
 
 import (
 	"fmt"
+	"sync/atomic"
+
 	"github.com/google/uuid"
 	"github.com/lonng/nano/scheduler"
-	"github.com/ouyangzhongmin/gameserver/pkg/coord"
-	"sync/atomic"
+	"github.com/nano/gameserver/pkg/coord"
 )
 
 type Entity struct {
@@ -18,9 +19,9 @@ type Entity struct {
 	_uuid           string // 不存储在数据库，只作为运行对象的唯一值
 	_id             int64
 	_name           string
-	_entityType int
-	_pos        coord.Vector3
-	_destroyed  atomic.Bool
+	_entityType     int
+	_pos            coord.Vector3
+	_destroyed      atomic.Bool
 }
 
 func (e *Entity) initEntity(id int64, name string, entityType int, bufSize int) {

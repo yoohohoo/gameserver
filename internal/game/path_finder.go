@@ -2,7 +2,8 @@ package game
 
 import (
 	"fmt"
-	"github.com/ouyangzhongmin/gameserver/pkg/astar"
+
+	"github.com/nano/gameserver/pkg/astar"
 )
 
 // 这个非线程安全，需要单线程一个执行

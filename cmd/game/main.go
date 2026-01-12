@@ -2,11 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/google/gops/agent"
-	"github.com/ouyangzhongmin/gameserver/db"
-	"github.com/ouyangzhongmin/gameserver/pkg/async"
-	"github.com/ouyangzhongmin/gameserver/pkg/env"
-	"github.com/ouyangzhongmin/gameserver/pkg/fileutil"
 	"os"
 	"path"
 	"path/filepath"
@@ -16,8 +11,14 @@ import (
 	"sync"
 	"time"
 
+	"github.com/google/gops/agent"
+	"github.com/nano/gameserver/db"
+	"github.com/nano/gameserver/pkg/async"
+	"github.com/nano/gameserver/pkg/env"
+	"github.com/nano/gameserver/pkg/fileutil"
+
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/ouyangzhongmin/gameserver/internal/game"
+	"github.com/nano/gameserver/internal/game"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 	"github.com/urfave/cli"

@@ -2,11 +2,12 @@ package game
 
 import (
 	"errors"
-	"github.com/ouyangzhongmin/gameserver/constants"
-	"github.com/ouyangzhongmin/gameserver/internal/game/object"
-	"github.com/ouyangzhongmin/gameserver/pkg/coord"
-	"github.com/ouyangzhongmin/gameserver/pkg/shape"
-	"github.com/ouyangzhongmin/gameserver/protocol"
+
+	"github.com/nano/gameserver/constants"
+	"github.com/nano/gameserver/internal/game/object"
+	"github.com/nano/gameserver/pkg/coord"
+	"github.com/nano/gameserver/pkg/shape"
+	"github.com/nano/gameserver/protocol"
 )
 
 type SpellEntity struct {

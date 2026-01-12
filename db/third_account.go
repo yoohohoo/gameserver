@@ -1,8 +1,8 @@
 package db
 
 import (
-	"github.com/ouyangzhongmin/gameserver/db/model"
-	"github.com/ouyangzhongmin/gameserver/pkg/errutil"
+	"github.com/nano/gameserver/db/model"
+	"github.com/nano/gameserver/pkg/errutil"
 )
 
 func QueryThirdAccount(account, platform string) (*model.ThirdAccount, error) {

@@ -1,8 +1,8 @@
 package game
 
 import (
-	"github.com/ouyangzhongmin/gameserver/pkg/coord"
-	"github.com/ouyangzhongmin/gameserver/pkg/shape"
+	"github.com/nano/gameserver/pkg/coord"
+	"github.com/nano/gameserver/pkg/shape"
 )
 
 type IEntity interface {

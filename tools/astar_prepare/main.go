@@ -4,15 +4,16 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/ouyangzhongmin/gameserver/internal/game"
-	"github.com/ouyangzhongmin/gameserver/pkg/coord"
-	"github.com/ouyangzhongmin/gameserver/pkg/fileutil"
-	"github.com/ouyangzhongmin/gameserver/pkg/path"
-	"github.com/ouyangzhongmin/gameserver/pkg/shape"
-	"github.com/urfave/cli"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/nano/gameserver/internal/game"
+	"github.com/nano/gameserver/pkg/coord"
+	"github.com/nano/gameserver/pkg/fileutil"
+	"github.com/nano/gameserver/pkg/path"
+	"github.com/nano/gameserver/pkg/shape"
+	"github.com/urfave/cli"
 )
 
 func main() {

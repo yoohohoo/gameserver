@@ -2,10 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/ouyangzhongmin/gameserver/db"
-	"github.com/ouyangzhongmin/gameserver/internal/master"
-	"github.com/ouyangzhongmin/gameserver/pkg/env"
-	"github.com/ouyangzhongmin/gameserver/pkg/fileutil"
 	"os"
 	"path"
 	"path/filepath"
@@ -14,6 +10,11 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/nano/gameserver/db"
+	"github.com/nano/gameserver/internal/master"
+	"github.com/nano/gameserver/pkg/env"
+	"github.com/nano/gameserver/pkg/fileutil"
 
 	_ "github.com/go-sql-driver/mysql"
 	log "github.com/sirupsen/logrus"

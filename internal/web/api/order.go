@@ -10,15 +10,15 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/lonng/nex"
-	"github.com/ouyangzhongmin/gameserver/db"
-	"github.com/ouyangzhongmin/gameserver/db/model"
-	provider2 "github.com/ouyangzhongmin/gameserver/internal/web/api/provider"
+	"github.com/nano/gameserver/db"
+	"github.com/nano/gameserver/db/model"
+	provider2 "github.com/nano/gameserver/internal/web/api/provider"
 	"github.com/pborman/uuid"
 	"golang.org/x/net/context"
 
-	"github.com/ouyangzhongmin/gameserver/pkg/errutil"
-	"github.com/ouyangzhongmin/gameserver/pkg/whitelist"
-	"github.com/ouyangzhongmin/gameserver/protocol"
+	"github.com/nano/gameserver/pkg/errutil"
+	"github.com/nano/gameserver/pkg/whitelist"
+	"github.com/nano/gameserver/protocol"
 )
 
 func MakeOrderService() http.Handler {

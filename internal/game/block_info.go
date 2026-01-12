@@ -5,12 +5,13 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	"github.com/ouyangzhongmin/gameserver/pkg/astar"
-	"github.com/ouyangzhongmin/gameserver/pkg/coord"
-	"github.com/ouyangzhongmin/gameserver/pkg/shape"
 	"io"
 	"math/rand"
 	"sync"
+
+	"github.com/nano/gameserver/pkg/astar"
+	"github.com/nano/gameserver/pkg/coord"
+	"github.com/nano/gameserver/pkg/shape"
 )
 
 // 二维格子数据

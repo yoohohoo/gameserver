@@ -2,16 +2,17 @@ package web
 
 import (
 	"context"
-	"github.com/lonng/nex"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 
-	"github.com/ouyangzhongmin/gameserver/internal/web/api"
-	"github.com/ouyangzhongmin/gameserver/pkg/algoutil"
-	"github.com/ouyangzhongmin/gameserver/pkg/whitelist"
-	"github.com/ouyangzhongmin/gameserver/protocol"
+	"github.com/lonng/nex"
+
+	"github.com/nano/gameserver/internal/web/api"
+	"github.com/nano/gameserver/pkg/algoutil"
+	"github.com/nano/gameserver/pkg/whitelist"
+	"github.com/nano/gameserver/protocol"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )

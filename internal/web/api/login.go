@@ -6,13 +6,13 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/ouyangzhongmin/gameserver/db"
-	"github.com/ouyangzhongmin/gameserver/pkg/errutil"
-	"github.com/ouyangzhongmin/gameserver/protocol"
+	"github.com/nano/gameserver/db"
+	"github.com/nano/gameserver/pkg/errutil"
+	"github.com/nano/gameserver/protocol"
 
 	"github.com/gorilla/mux"
 	"github.com/lonng/nex"
-	"github.com/ouyangzhongmin/gameserver/db/model"
+	"github.com/nano/gameserver/db/model"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 	"gopkg.in/chanxuehong/wechat.v2/open/oauth2"

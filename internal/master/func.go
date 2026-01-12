@@ -1,11 +1,11 @@
 package master
 
 import (
-	"github.com/ouyangzhongmin/gameserver/constants"
-	"github.com/ouyangzhongmin/gameserver/db/model"
-	"github.com/ouyangzhongmin/gameserver/internal/game/object"
-	"github.com/ouyangzhongmin/gameserver/pkg/utils"
-	"github.com/ouyangzhongmin/gameserver/protocol"
+	"github.com/nano/gameserver/constants"
+	"github.com/nano/gameserver/db/model"
+	"github.com/nano/gameserver/internal/game/object"
+	"github.com/nano/gameserver/pkg/utils"
+	"github.com/nano/gameserver/protocol"
 )
 
 func BroadcastSystemMessage(message string) {

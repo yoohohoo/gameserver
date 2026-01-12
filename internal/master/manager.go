@@ -3,14 +3,15 @@ package master
 import (
 	"errors"
 	"fmt"
-	"github.com/lonng/nano/scheduler"
-	"github.com/ouyangzhongmin/gameserver/constants"
-	"github.com/ouyangzhongmin/gameserver/db"
-	"github.com/ouyangzhongmin/gameserver/db/model"
-	"github.com/ouyangzhongmin/gameserver/pkg/async"
-	"github.com/ouyangzhongmin/gameserver/protocol"
 	"sync"
 	"time"
+
+	"github.com/lonng/nano/scheduler"
+	"github.com/nano/gameserver/constants"
+	"github.com/nano/gameserver/db"
+	"github.com/nano/gameserver/db/model"
+	"github.com/nano/gameserver/pkg/async"
+	"github.com/nano/gameserver/protocol"
 
 	"github.com/lonng/nano"
 	"github.com/lonng/nano/component"

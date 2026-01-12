@@ -166,7 +166,7 @@ func (t2s *TableToStruct) Run() error {
 				ttf._import["time"] = `"time"`
 			}
 			if _type == "mysqlx.JSON" {
-				ttf._import["json"] = `"github.com/ouyangzhongmin/gameserver/pkg/mysqlx"`
+				ttf._import["json"] = `"github.com/nano/gameserver/pkg/mysqlx"`
 			}
 			if strings.EqualFold(isNullable, "YES") {
 				_type = "*" + _type //指针类型

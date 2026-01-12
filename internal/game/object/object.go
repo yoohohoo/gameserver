@@ -2,11 +2,12 @@ package object
 
 // 用于与前端通信的对象数据
 import (
-	"github.com/ouyangzhongmin/gameserver/constants"
-	"github.com/ouyangzhongmin/gameserver/db/model"
-	"github.com/ouyangzhongmin/gameserver/pkg/coord"
 	"math/rand"
 	"time"
+
+	"github.com/nano/gameserver/constants"
+	"github.com/nano/gameserver/db/model"
+	"github.com/nano/gameserver/pkg/coord"
 )
 
 type GameObject struct {
@@ -130,9 +131,9 @@ type SpellObject struct {
 	SpellType    int                `json:"spell_type" `    //飞行速度
 	CdTime       int                `json:"cd_time" `       //cd间隔
 	CurCdTime    int                `json:"cur_cd_time" `   //当前cd间隔
-	Buf       *model.BufferState `json:"-"`
-	TargetPos coord.Vector3      `json:"target_pos"`
-	CasterId  int64              `json:"caster_id"`
+	Buf          *model.BufferState `json:"-"`
+	TargetPos    coord.Vector3      `json:"target_pos"`
+	CasterId     int64              `json:"caster_id"`
 	CasterType   int                `json:"caster_type"`
 	TargetId     int64              `json:"target_id"`
 	TargetType   int                `json:"target_type"`

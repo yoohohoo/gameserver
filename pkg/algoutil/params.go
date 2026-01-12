@@ -8,7 +8,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/ouyangzhongmin/gameserver/pkg/errutil"
+	"github.com/nano/gameserver/pkg/errutil"
 )
 
 const (

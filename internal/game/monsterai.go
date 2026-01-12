@@ -1,21 +1,22 @@
 package game
 
 import (
-	"github.com/ouyangzhongmin/gameserver/constants"
-	"github.com/ouyangzhongmin/gameserver/db/model"
-	"github.com/ouyangzhongmin/gameserver/internal/game/object"
-	"github.com/ouyangzhongmin/gameserver/pkg/coord"
-	"github.com/ouyangzhongmin/gameserver/pkg/shape"
 	"math/rand"
 	"time"
+
+	"github.com/nano/gameserver/constants"
+	"github.com/nano/gameserver/db/model"
+	"github.com/nano/gameserver/internal/game/object"
+	"github.com/nano/gameserver/pkg/coord"
+	"github.com/nano/gameserver/pkg/shape"
 )
 
 type monsterai struct {
 	aidata        *model.Aiconfig
-	monster   *Monster
-	originX   coord.Coord
-	originY   coord.Coord
-	chaseRect shape.Rect
+	monster       *Monster
+	originX       coord.Coord
+	originY       coord.Coord
+	chaseRect     shape.Rect
 	behaviorState constants.BEHAVIOR
 	preparePathId int
 	readyUseSpell *object.SpellObject

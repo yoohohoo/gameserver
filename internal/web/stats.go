@@ -6,10 +6,10 @@ import (
 
 	"time"
 
-	"github.com/ouyangzhongmin/gameserver/db"
-	"github.com/ouyangzhongmin/gameserver/protocol"
+	"github.com/nano/gameserver/db"
+	"github.com/nano/gameserver/protocol"
 
-	"github.com/ouyangzhongmin/gameserver/pkg/errutil"
+	"github.com/nano/gameserver/pkg/errutil"
 )
 
 var dayInternal = 24 * 60 * 60

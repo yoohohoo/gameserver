@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/ouyangzhongmin/gameserver/pkg/mtm"
+	"github.com/nano/gameserver/pkg/mtm"
 )
 
 type MysqlCnf struct {

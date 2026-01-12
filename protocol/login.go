@@ -1,7 +1,7 @@
 package protocol
 
 import (
-	"github.com/ouyangzhongmin/gameserver/db/model"
+	"github.com/nano/gameserver/db/model"
 )
 
 type ThirdUserLoginRequest struct {

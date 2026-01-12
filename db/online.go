@@ -2,8 +2,9 @@ package db
 
 import (
 	"encoding/json"
-	"github.com/ouyangzhongmin/gameserver/db/model"
-	"github.com/ouyangzhongmin/gameserver/pkg/errutil"
+
+	"github.com/nano/gameserver/db/model"
+	"github.com/nano/gameserver/pkg/errutil"
 	log "github.com/sirupsen/logrus"
 )
 

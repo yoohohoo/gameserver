@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/ouyangzhongmin/gameserver/pkg/errutil"
+	"github.com/nano/gameserver/pkg/errutil"
 	"golang.org/x/crypto/pkcs12"
 )
 

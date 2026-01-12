@@ -2,9 +2,10 @@ package game
 
 import (
 	"errors"
-	"github.com/ouyangzhongmin/gameserver/db"
-	"github.com/ouyangzhongmin/gameserver/protocol"
 	"time"
+
+	"github.com/nano/gameserver/db"
+	"github.com/nano/gameserver/protocol"
 
 	"github.com/lonng/nano/component"
 	"github.com/lonng/nano/session"

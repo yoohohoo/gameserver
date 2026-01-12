@@ -8,10 +8,10 @@ import (
 	"time"
 
 	"github.com/lonng/nex"
-	"github.com/ouyangzhongmin/gameserver/db"
-	"github.com/ouyangzhongmin/gameserver/internal/web/api"
-	"github.com/ouyangzhongmin/gameserver/pkg/errutil"
-	"github.com/ouyangzhongmin/gameserver/protocol"
+	"github.com/nano/gameserver/db"
+	"github.com/nano/gameserver/internal/web/api"
+	"github.com/nano/gameserver/pkg/errutil"
+	"github.com/nano/gameserver/protocol"
 	log "github.com/sirupsen/logrus"
 )
 

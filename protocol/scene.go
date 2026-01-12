@@ -1,9 +1,9 @@
 package protocol
 
 import (
-	"github.com/ouyangzhongmin/gameserver/db/model"
-	"github.com/ouyangzhongmin/gameserver/internal/game/object"
-	"github.com/ouyangzhongmin/gameserver/pkg/coord"
+	"github.com/nano/gameserver/db/model"
+	"github.com/nano/gameserver/internal/game/object"
+	"github.com/nano/gameserver/pkg/coord"
 )
 
 type UserSceneId struct {
@@ -72,10 +72,10 @@ type HeroMoveStopRequest struct {
 type HeroMoveTraceResponse struct {
 	ID         int64       `json:"id"`
 	TracePaths [][]int32   `json:"trace_paths"` //trace_paths[0][0] 前面的是Y轴的数据，后面的是X轴的数据，trace_paths[y][x],前端要注意
-	StepTime int         `json:"step_time"`
-	PosX     coord.Coord `json:"pos_x"`
-	PosY     coord.Coord `json:"pos_y"`
-	PosZ     coord.Coord `json:"pos_z"`
+	StepTime   int         `json:"step_time"`
+	PosX       coord.Coord `json:"pos_x"`
+	PosY       coord.Coord `json:"pos_y"`
+	PosZ       coord.Coord `json:"pos_z"`
 }
 
 type HeroMoveStopResponse struct {
@@ -88,10 +88,10 @@ type HeroMoveStopResponse struct {
 type MonsterMoveTraceResponse struct {
 	ID         int64       `json:"id"`
 	TracePaths [][]int32   `json:"trace_paths"`
-	StepTime int         `json:"step_time"`
-	PosX     coord.Coord `json:"pos_x"`
-	PosY     coord.Coord `json:"pos_y"`
-	PosZ     coord.Coord `json:"pos_z"`
+	StepTime   int         `json:"step_time"`
+	PosX       coord.Coord `json:"pos_x"`
+	PosY       coord.Coord `json:"pos_y"`
+	PosZ       coord.Coord `json:"pos_z"`
 }
 
 type MonsterMoveStopResponse struct {

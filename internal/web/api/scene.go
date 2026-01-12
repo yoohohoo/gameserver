@@ -1,14 +1,15 @@
 package api
 
 import (
-	"github.com/gorilla/mux"
-	"github.com/lonng/nex"
-	"github.com/ouyangzhongmin/gameserver/db"
-	"github.com/ouyangzhongmin/gameserver/db/model"
-	"github.com/ouyangzhongmin/gameserver/pkg/errutil"
-	"github.com/ouyangzhongmin/gameserver/pkg/whitelist"
 	"net/http"
 	"strconv"
+
+	"github.com/gorilla/mux"
+	"github.com/lonng/nex"
+	"github.com/nano/gameserver/db"
+	"github.com/nano/gameserver/db/model"
+	"github.com/nano/gameserver/pkg/errutil"
+	"github.com/nano/gameserver/pkg/whitelist"
 )
 
 func MakeSceneService() http.Handler {

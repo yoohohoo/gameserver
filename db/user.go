@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/ouyangzhongmin/gameserver/db/model"
-	"github.com/ouyangzhongmin/gameserver/pkg/errutil"
-	"github.com/ouyangzhongmin/gameserver/protocol"
+	"github.com/nano/gameserver/db/model"
+	"github.com/nano/gameserver/pkg/errutil"
+	"github.com/nano/gameserver/protocol"
 )
 
 // QueryUser get the user by id

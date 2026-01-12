@@ -1,11 +1,12 @@
 package game
 
 import (
-	"github.com/ouyangzhongmin/gameserver/db/model"
-	"github.com/ouyangzhongmin/gameserver/internal/game/object"
-	"github.com/ouyangzhongmin/gameserver/pkg/coord"
-	"github.com/ouyangzhongmin/gameserver/pkg/shape"
 	"sync"
+
+	"github.com/nano/gameserver/db/model"
+	"github.com/nano/gameserver/internal/game/object"
+	"github.com/nano/gameserver/pkg/coord"
+	"github.com/nano/gameserver/pkg/shape"
 )
 
 type movableEntity struct {

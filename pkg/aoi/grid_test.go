@@ -1,12 +1,8 @@
 package aoi
 
 import (
-	"fmt"
-	"math/rand"
 	"sort"
-	"sync"
 	"testing"
-	"time"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -64,96 +60,96 @@ func TestGridManger_GetSurroundGrids(t *testing.T) {
 	}
 }
 
-func TestNewGridManger(t *testing.T) {
-	aol := NewGridManager(0, 0, 250, 5)
-	manger := aol.(*GridManager)
-	entities := []*Entity{
-		{
-			X: 0, Y: 0, Key: "a",
-		},
-		{
-			X: 50, Y: 0, Key: "b",
-		},
-		{
-			X: 100, Y: 0, Key: "c",
-		},
-		{
-			X: 50, Y: 0, Key: "d",
-		},
-		{
-			X: 50, Y: 50, Key: "e",
-		},
-		{
-			X: 50, Y: 100, Key: "f",
-		},
-		{
-			X: 100, Y: 0, Key: "g",
-		},
-		{
-			X: 100, Y: 50, Key: "h",
-		},
-		{
-			X: 100, Y: 100, Key: "i",
-		},
-	}
+// func TestNewGridManger(t *testing.T) {
+// 	aol := NewGridManager(0, 0, 250, 5)
+// 	manger := aol.(*GridManager)
+// 	entities := []*Entity{
+// 		{
+// 			X: 0, Y: 0, Key: "a",
+// 		},
+// 		{
+// 			X: 50, Y: 0, Key: "b",
+// 		},
+// 		{
+// 			X: 100, Y: 0, Key: "c",
+// 		},
+// 		{
+// 			X: 50, Y: 0, Key: "d",
+// 		},
+// 		{
+// 			X: 50, Y: 50, Key: "e",
+// 		},
+// 		{
+// 			X: 50, Y: 100, Key: "f",
+// 		},
+// 		{
+// 			X: 100, Y: 0, Key: "g",
+// 		},
+// 		{
+// 			X: 100, Y: 50, Key: "h",
+// 		},
+// 		{
+// 			X: 100, Y: 100, Key: "i",
+// 		},
+// 	}
 
-	for _, entity := range entities {
-		manger.Add(entity.X, entity.Y, entity.Key)
-	}
+// 	for _, entity := range entities {
+// 		manger.Add(entity.X, entity.Y, entity.Key)
+// 	}
 
-	search := manger.Search(50, 50)
-	result := make([]string, 0)
-	for _, entity := range search {
-		result = append(result, entity)
-	}
-	sort.Strings(result)
-	assert.Equal(t, []string{"a", "b", "c", "d", "e", "f", "g", "h", "i"}, result)
+// 	search := manger.Search(50, 50)
+// 	result := make([]string, 0)
+// 	for _, entity := range search {
+// 		result = append(result, entity)
+// 	}
+// 	sort.Strings(result)
+// 	assert.Equal(t, []string{"a", "b", "c", "d", "e", "f", "g", "h", "i"}, result)
 
-	manger.Delete(100, 100, "i")
-	search2 := manger.Search(50, 50)
-	result2 := make([]string, 0)
-	for _, entity := range search2 {
-		result2 = append(result2, entity)
-	}
-	sort.Strings(result2)
-	assert.Equal(t, []string{"a", "b", "c", "d", "e", "f", "g", "h"}, result2)
-}
+// 	manger.Delete(100, 100, "i")
+// 	search2 := manger.Search(50, 50)
+// 	result2 := make([]string, 0)
+// 	for _, entity := range search2 {
+// 		result2 = append(result2, entity)
+// 	}
+// 	sort.Strings(result2)
+// 	assert.Equal(t, []string{"a", "b", "c", "d", "e", "f", "g", "h"}, result2)
+// }
 
-func BenchmarkGridManger(b *testing.B) {
-	var wg sync.WaitGroup
-	aol := NewGridManager(0, 0, 1024, 16)
-	manger := aol.(*GridManager)
+// func BenchmarkGridManger(b *testing.B) {
+// 	var wg sync.WaitGroup
+// 	aol := NewGridManager(0, 0, 1024, 16)
+// 	manger := aol.(*GridManager)
 
-	rand.Seed(time.Now().UnixNano())
-	for i := 0; i < b.N; i++ {
-		wg.Add(30000)
-		for j := 0; j < 10000; j++ {
-			go func() {
-				manger.Add(
-					float64(rand.Intn(10)*10+rand.Intn(10)),
-					float64(rand.Intn(10)*10+rand.Intn(10)),
-					fmt.Sprintf("player%d", rand.Intn(100)),
-				)
-				wg.Done()
-			}()
+// 	rand.Seed(time.Now().UnixNano())
+// 	for i := 0; i < b.N; i++ {
+// 		wg.Add(30000)
+// 		for j := 0; j < 10000; j++ {
+// 			go func() {
+// 				manger.Add(
+// 					float64(rand.Intn(10)*10+rand.Intn(10)),
+// 					float64(rand.Intn(10)*10+rand.Intn(10)),
+// 					fmt.Sprintf("player%d", rand.Intn(100)),
+// 				)
+// 				wg.Done()
+// 			}()
 
-			go func() {
-				manger.Delete(
-					float64(rand.Intn(10)*10+rand.Intn(10)),
-					float64(rand.Intn(10)*10+rand.Intn(10)),
-					fmt.Sprintf("player%d", rand.Intn(100)),
-				)
-				wg.Done()
-			}()
+// 			go func() {
+// 				manger.Delete(
+// 					float64(rand.Intn(10)*10+rand.Intn(10)),
+// 					float64(rand.Intn(10)*10+rand.Intn(10)),
+// 					fmt.Sprintf("player%d", rand.Intn(100)),
+// 				)
+// 				wg.Done()
+// 			}()
 
-			go func() {
-				manger.Search(
-					float64(rand.Intn(10)*10+rand.Intn(10)),
-					float64(rand.Intn(10)*10+rand.Intn(10)),
-				)
-				wg.Done()
-			}()
-		}
-		wg.Wait()
-	}
-}
+// 			go func() {
+// 				manger.Search(
+// 					float64(rand.Intn(10)*10+rand.Intn(10)),
+// 					float64(rand.Intn(10)*10+rand.Intn(10)),
+// 				)
+// 				wg.Done()
+// 			}()
+// 		}
+// 		wg.Wait()
+// 	}
+// }

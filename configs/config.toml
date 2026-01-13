@@ -7,7 +7,7 @@ heartbeat = 30
 [webserver]
 addr = "0.0.0.0:12307"                         #监听地址
 enable_ssl = false                            #是否使用https, 如果为true, 则必须配置cert和key的路径
-static_dir = "E:\\workspace\\goProjects\\src\\gameserver\\internal\\web\\static"
+static_dir = "D:\\work\\gameserver\\gameserver\\internal\\web\\static"
 #"web/static"
 
 #证书设置
@@ -31,12 +31,12 @@ port = 33251
 
 # Redis server config
 [redis]
-host = "172.16.2.23"
+host = "127.0.0.1"
 port = 6379
 
 # Mysql server config
 [database]
-host = "172.16.2.8"
+host = "127.0.0.1"
 port = 3306
 dbname = "jsmx"
 password = "123456"

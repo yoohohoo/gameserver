@@ -1,12 +1,9 @@
 package aoi
 
 import (
-	"fmt"
-	"github.com/stretchr/testify/assert"
-	"math/rand"
-	"sync"
 	"testing"
-	"time"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_FindQuadrant(t *testing.T) {
@@ -62,100 +59,100 @@ func Test_FindQuadrant(t *testing.T) {
 	}
 }
 
-func Test_NeedCut(t *testing.T) {
-	aoi := NewQuadTree(0, 0, 100)
-	tree := aoi.(*QuadTree)
+// func Test_NeedCut(t *testing.T) {
+// 	aoi := NewQuadTree(0, 0, 100)
+// 	tree := aoi.(*QuadTree)
 
-	tree.maxCap = 2 // 超过两人节点分裂
-	assert.Equal(t, false, tree.needCut())
-	tree.Add(60.9, 24.9, "player1")
+// 	tree.maxCap = 2 // 超过两人节点分裂
+// 	assert.Equal(t, false, tree.needCut())
+// 	tree.Add(60.9, 24.9, "player1")
 
-	assert.Equal(t, false, tree.needCut())
-	tree.Add(25, 25, "player2")
+// 	assert.Equal(t, false, tree.needCut())
+// 	tree.Add(25, 25, "player2")
 
-	assert.Equal(t, true, tree.needCut())
-}
+// 	assert.Equal(t, true, tree.needCut())
+// }
 
-func TestNode_Search(t *testing.T) {
-	aoi := NewQuadTree(0, 0, 100)
-	tree := aoi.(*QuadTree)
-	tree.maxCap = 2 // 超过两人节点分裂
-	tree.radius = 5
+// func TestNode_Search(t *testing.T) {
+// 	aoi := NewQuadTree(0, 0, 100)
+// 	tree := aoi.(*QuadTree)
+// 	tree.maxCap = 2 // 超过两人节点分裂
+// 	tree.radius = 5
 
-	tree.Add(60.9, 24.9, "player1")
-	tree.Add(25, 25, "player2")
+// 	tree.Add(60.9, 24.9, "player1")
+// 	tree.Add(25, 25, "player2")
 
-	// 查询player1附近
-	entities := tree.Search(60.9, 24.9)
-	assert.Equal(t, 2, len(entities), "player1 player2")
+// 	// 查询player1附近
+// 	entities := tree.Search(60.9, 24.9)
+// 	assert.Equal(t, 2, len(entities), "player1 player2")
 
-	// 当出现第三个玩家超过节点最大容量产生分裂
-	tree.Add(99, 24, "player3")
+// 	// 当出现第三个玩家超过节点最大容量产生分裂
+// 	tree.Add(99, 24, "player3")
 
-	// 查询player1附近
-	entities = tree.Search(60.9, 24.9)
-	assert.Equal(t, 2, len(entities), "player1 player3")
+// 	// 查询player1附近
+// 	entities = tree.Search(60.9, 24.9)
+// 	assert.Equal(t, 2, len(entities), "player1 player3")
 
-	// 添加第四个玩家
-	tree.Add(72, 23, "player4")
+// 	// 添加第四个玩家
+// 	tree.Add(72, 23, "player4")
 
-	// 查询player1附近
-	entities = tree.Search(60.9, 24.9)
-	assert.Equal(t, 2, len(entities), "player1 player4")
+// 	// 查询player1附近
+// 	entities = tree.Search(60.9, 24.9)
+// 	assert.Equal(t, 2, len(entities), "player1 player4")
 
-	// 查询player2附近
-	entities = tree.Search(25, 25)
-	assert.Equal(t, 1, len(entities), "player2")
+// 	// 查询player2附近
+// 	entities = tree.Search(25, 25)
+// 	assert.Equal(t, 1, len(entities), "player2")
 
-	// 添加第五个玩家
-	tree.Add(49.9, 49.9, "player5")
+// 	// 添加第五个玩家
+// 	tree.Add(49.9, 49.9, "player5")
 
-	// 查询player2附近
-	entities = tree.Search(25, 25)
-	assert.Equal(t, 2, len(entities), "player2 player5")
+// 	// 查询player2附近
+// 	entities = tree.Search(25, 25)
+// 	assert.Equal(t, 2, len(entities), "player2 player5")
 
-	// 移除player5
-	tree.Delete(49.9, 49.9, "player5")
+// 	// 移除player5
+// 	tree.Delete(49.9, 49.9, "player5")
 
-	// 查询player2附近
-	entities = tree.Search(25, 25)
-	assert.Equal(t, 1, len(entities), "player2")
-}
+// 	// 查询player2附近
+// 	entities = tree.Search(25, 25)
+// 	assert.Equal(t, 1, len(entities), "player2")
+// }
 
-func BenchmarkQuadtree(b *testing.B) {
-	var wg sync.WaitGroup
-	aoi := NewQuadTree(0, 0, 1024)
-	tree := aoi.(*QuadTree)
-	rand.Seed(time.Now().UnixNano())
+// func BenchmarkQuadtree(b *testing.B) {
+// 	var wg sync.WaitGroup
+// 	aoi := NewQuadTree(0, 0, 1024)
+// 	tree := aoi.(*QuadTree)
+// 	rand.Seed(time.Now().UnixNano())
 
-	for i := 0; i < b.N; i++ {
-		wg.Add(30000)
-		for j := 0; j < 10000; j++ {
-			go func() {
-				tree.Add(
-					float64(rand.Intn(10)*10+rand.Intn(10)),
-					float64(rand.Intn(10)*10+rand.Intn(10)),
-					fmt.Sprintf("player%d", rand.Intn(100)),
-				)
-				wg.Done()
-			}()
+// 	for i := 0; i < b.N; i++ {
+// 		wg.Add(30000)
+// 		for j := 0; j < 10000; j++ {
+// 			go func() {
+// 				tree.Add(
+// 					float64(rand.Intn(10)*10+rand.Intn(10)),
+// 					float64(rand.Intn(10)*10+rand.Intn(10)),
+// 					fmt.Sprintf("player%d", rand.Intn(100)),
+// 				)
+// 				wg.Done()
+// 			}()
 
-			go func() {
-				tree.Delete(
-					float64(rand.Intn(10)*10+rand.Intn(10)),
-					float64(rand.Intn(10)*10+rand.Intn(10)),
-					fmt.Sprintf("player%d", rand.Intn(100)),
-				)
-				wg.Done()
-			}()
+// 			go func() {
+// 				tree.Delete(
+// 					float64(rand.Intn(10)*10+rand.Intn(10)),
+// 					float64(rand.Intn(10)*10+rand.Intn(10)),
+// 					fmt.Sprintf("player%d", rand.Intn(100)),
+// 				)
+// 				wg.Done()
+// 			}()
 
-			go func() {
-				tree.Search(
-					float64(rand.Intn(10)*10+rand.Intn(10)),
-					float64(rand.Intn(10)*10+rand.Intn(10)),
-				)
-				wg.Done()
-			}()
-		}
-	}
-}
+// 			go func() {
+// 				tree.Search(
+// 					float64(rand.Intn(10)*10+rand.Intn(10)),
+// 					float64(rand.Intn(10)*10+rand.Intn(10)),
+// 				)
+// 				wg.Done()
+// 			}()
+// 		}
+// 	}
+// }

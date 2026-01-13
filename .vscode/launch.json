@@ -9,28 +9,29 @@
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "cmd/master/main.go"
+            "program": "${workspaceFolder}/cmd/master"
         },
         {
             "name": "gate",
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "cmd/gate/main.go"
+            "program": "${workspaceFolder}/cmd/gate"
         },
         {
             "name": "web",
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "cmd/web/main.go"
+            "program": "${workspaceFolder}/cmd/web"
         },
         {
             "name": "game",
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "cmd/game/main.go"
+            "program": "${workspaceFolder}/cmd/game",
+            "args": ["--config", "${workspaceFolder}/configs/config.toml", "--scenes", "20"],
         }
 
     ]
